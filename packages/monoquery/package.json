@@ -1,0 +1,31 @@
+{
+  "name": "monoquery",
+  "version": "1.0.0",
+  "description": "Collect graphql fragments and distribute data with apollo react and angular",
+  "repository": "github.com/brysgo/monoquery",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-web-module",
+    "clean": "nwb clean-module",
+    "test": "jest --config jest.config.js --no-cache"
+  },
+  "dependencies": {
+    "graphql-anywhere": "^4.1.8",
+    "graphql-path": "^1.0.1",
+    "try-get": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "jest": "^22.4.3",
+    "nwb": "0.21.x"
+  },
+  "license": "MIT"
+}

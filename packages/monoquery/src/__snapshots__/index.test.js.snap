@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build, run distribute simple query 1`] = `
+"{
+  hello
+  ...SimpleFragment
+  ...AnotherFragment
+}
+
+fragment SimpleFragment on Query {
+  something
+}
+
+fragment AnotherFragment on Query {
+  anotherThing
+}
+"
+`;
