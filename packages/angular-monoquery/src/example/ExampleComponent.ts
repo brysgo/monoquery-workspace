@@ -1,12 +1,12 @@
 import { Component } from "@angular/core";
 import { Observable } from "rxjs/Observable";
-import { MonoQuery } from "../";
+import { Fragments } from "../";
 
 import gql from "graphql-tag";
 
 import { MonoProvider } from "./MonoProvider";
 
-@MonoQuery({
+@Fragments({
   fragments: {
     simpleFragment: gql`
       fragment SimpleFragment on Query {
