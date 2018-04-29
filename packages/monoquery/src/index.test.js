@@ -41,3 +41,40 @@ test("build, run distribute simple query", async () => {
     withGraphQLTag: { anotherThing: "hey" }
   });
 });
+
+test("you can pass data instead of a fetcher", () => {
+  const fragments = {
+    simpleFragment: gql`
+      fragment SimpleFragment on Query {
+        something
+      }
+    `,
+    withGraphQLTag: graphql`
+      fragment AnotherFragment on Query {
+        anotherThing
+      }
+    `
+  };
+  const monoQuery = createMonoQuery({
+      data: {
+        hello: "world",
+        something: "good",
+        anotherThing: "hey"
+      }
+    });
+  const result = monoQuery({
+    query: gql`
+      {
+        hello
+        ...SimpleFragment
+        ...AnotherFragment
+      }
+      ${fragments.simpleFragment}
+      ${fragments.withGraphQLTag}
+    `
+  });
+  expect(result.getResultsFor(fragments)).toEqual({
+    simpleFragment: { something: "good" },
+    withGraphQLTag: { anotherThing: "hey" }
+  });
+});
