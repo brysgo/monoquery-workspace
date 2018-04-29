@@ -1,6 +1,11 @@
 {
   "private": true,
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ],
+    "nohoist": [
+      "**/jest-preset-angular"
+    ]
+  }
 }

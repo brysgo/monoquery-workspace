@@ -65,7 +65,9 @@ test("build, run distribute simple query", async () => {
             (
               <div>
                 <Fragments fragments={fragments}>
-                  {({testing}) => (<div>{JSON.stringify(testing, null, 2)}</div>)}
+                  {({ testing }) => (
+                    <div>{JSON.stringify(testing, null, 2)}</div>
+                  )}
                 </Fragments>
               </div>
             ))
