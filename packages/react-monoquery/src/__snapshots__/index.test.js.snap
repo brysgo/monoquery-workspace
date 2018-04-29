@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`build, run distribute simple query 1`] = `
+<div>
+  <div>
+    {
+  "__typename": "User",
+  "name": "John Doe",
+  "email": "user@example.com",
+  "phone": "5555555555"
+}
+  </div>
+</div>
+`;
