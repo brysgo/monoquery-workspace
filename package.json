@@ -7,5 +7,9 @@
     "nohoist": [
       "**/jest-preset-angular"
     ]
+  },
+  "resolutions": {
+    "**/phantomjs-prebuilt": "npm:noop",
+    "**/node-sass": "npm:noop"
   }
 }

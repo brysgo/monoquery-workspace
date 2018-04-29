@@ -2,32 +2,31 @@ import { HttpClientModule } from "@angular/common/http";
 import { ApolloModule, Apollo } from "apollo-angular";
 import { HttpLinkModule, HttpLink } from "apollo-angular-link-http";
 
-
 import { TestBed } from "@angular/core/testing";
 
 import gql from "graphql-tag";
 
-describe("MonoQueryProvider", () => {
-  let monoQueryProvider: MonoQueryProvider;
+import { MonoQueryModule } from "./";
 
-  beforeEach(() => {
+describe("MonoQueryModule", () => {
+  it("does things", async () => {
+    const FakeModule = { fragments: { aFragment: `` } };
+    const FakeMonoProvider = MonoQueryModule.forChild(FakeModule);
     TestBed.configureTestingModule({
-      imports: [HttpClientModule, ApolloModule, HttpLinkModule],
+      imports: [
+        HttpClientModule,
+        ApolloModule,
+        HttpLinkModule,
+        MonoQueryModule.forRoot()
+      ],
       providers: [
         HttpClientModule,
         ApolloModule,
         HttpLinkModule,
-        MonoQueryProvider
+        FakeMonoProvider
       ]
     });
-    monoQueryProvider = TestBed.get(MonoQueryProvider);
-  });
-
-  it("should exist", () => {
-    expect(monoQueryProvider).toBeDefined();
-  });
-
-  it("should use HttpClient", async () => {
-    await monoQueryProvider.fetchData();
+    fakeMonoProvider = TestBed.get(FakeMonoProvider);
+    expect(await fakeMonoProvider).toMatchSnapshot();
   });
 });
