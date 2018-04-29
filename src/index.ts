@@ -26,7 +26,7 @@ export const MonoQuery = ({ fetcher, query, ...options }) => result => {
     }));
   };
   result.prototype.getDataFor = function getDataFor(comp) {
-    return this.data.pipe(map(d => d.getResultsFor(comp.fragments)));
+    return this.data.pipe(map((d: any) => d.getResultsFor(comp.fragments)));
   };
   return result;
 };
