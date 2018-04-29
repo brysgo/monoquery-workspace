@@ -40,5 +40,8 @@
       "<rootDir>/src/"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
+  },
+  "dependencies": {
+    "monoquery": "^1.0.0"
   }
 }
