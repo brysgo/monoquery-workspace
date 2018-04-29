@@ -3962,19 +3962,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.2, graceful-fs@^4.1.3, graceful-fs@^4.1.4,
   version "4.1.11"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.11.tgz#0e8bdfe4d1ddb8854d64e04ea7c00e2a026e5658"
 
-graphql-anywhere@^4.1.5, graphql-anywhere@^4.1.8:
+graphql-anywhere@^4.1.8:
   version "4.1.8"
   resolved "https://registry.yarnpkg.com/graphql-anywhere/-/graphql-anywhere-4.1.8.tgz#23882e6a16ec824febbe5bca40937cdd76c5acdc"
   dependencies:
     apollo-utilities "^1.0.11"
-
-graphql-path@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/graphql-path/-/graphql-path-1.0.1.tgz#5b35f644255c7073ca012b23cedac6b22001c040"
-  dependencies:
-    graphql "^0.13.1"
-    graphql-anywhere "^4.1.5"
-    graphql-tag "^2.8.0"
 
 graphql-tag@^2.8.0:
   version "2.9.1"

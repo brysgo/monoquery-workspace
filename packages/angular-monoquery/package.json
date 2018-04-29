@@ -10,7 +10,8 @@
       "entryFile": "src/index.ts"
     },
     "whitelistedNonPeerDependencies": [
-      "monoquery"
+      "monoquery",
+      "graphql-path"
     ]
   },
   "scripts": {
@@ -45,6 +46,7 @@
     "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
   },
   "dependencies": {
+    "graphql-path": "^2.0.0",
     "monoquery": "^1.0.0"
   }
 }
