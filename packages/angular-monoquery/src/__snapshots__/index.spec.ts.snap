@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonoQueryModule is used to build a MonoProvider 1`] = `
+<example-component
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"world"}}
+</example-component>
+`;
