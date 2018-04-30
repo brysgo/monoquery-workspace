@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "angular-monoquery",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "main": "dist/bundles/angular-monoquery.umd.js",
   "author": "Bryan Goldstein <brysgo@gmail.com>",
   "license": "MIT",
@@ -24,19 +24,19 @@
     "@types/jest": "^22.2.3",
     "apollo-angular": "^1.0.1",
     "apollo-angular-link-http": "^1.0.3",
+    "graphql-path": "^2.0.0",
     "jest-preset-angular": "^5.2.2",
+    "monoquery": "^1.0.0",
     "ng-packagr": "^2.4.2",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
     "typescript": "^2.8.3",
-    "zone.js": "^0.8.26",
-    "graphql-path": "^2.0.0",
-    "monoquery": "^1.0.0"
+    "zone.js": "^0.8.26"
   },
   "peerDependencies": {
-    "rxjs": "^6.0.0",
     "graphql-path": "^2.0.0",
-    "monoquery": "^1.0.0"
+    "monoquery": "^1.0.0",
+    "rxjs": "^6.0.0"
   },
   "jest": {
     "preset": "jest-preset-angular",
