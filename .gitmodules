@@ -4,3 +4,6 @@
 [submodule "packages/monoquery"]
 	path = packages/monoquery
 	url = git@github.com:brysgo/monoquery.git
+[submodule "packages/angular-monoquery"]
+	path = packages/angular-monoquery
+	url = git@github.com:brysgo/angular-monoquery.git
