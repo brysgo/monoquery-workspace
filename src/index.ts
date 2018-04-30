@@ -1,5 +1,6 @@
 import { Observable } from "rxjs/Observable";
-import { map } from "rxjs/operators";
+import { fromPromise } from "rxjs/observable/fromPromise";
+import { map, mergeAll } from "rxjs/operators";
 import { createMonoQuery } from "monoquery";
 
 export const Fragments = ({
@@ -26,7 +27,10 @@ export const MonoQuery = ({ fetcher, query, ...options }) => result => {
     }));
   };
   result.prototype.getDataFor = function getDataFor(comp) {
-    return this.data.pipe(map((d: any) => d.getResultsFor(comp.fragments)));
+    return this.data.pipe(
+      mergeAll(),
+      map((d: any) => d.getResultsFor(comp.fragments))
+    );
   };
   return result;
 };

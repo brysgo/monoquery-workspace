@@ -8,11 +8,7 @@
   "ngPackage": {
     "lib": {
       "entryFile": "src/index.ts"
-    },
-    "whitelistedNonPeerDependencies": [
-      "monoquery",
-      "graphql-path"
-    ]
+    }
   },
   "scripts": {
     "build": "ng-packagr -p package.json",
@@ -33,10 +29,14 @@
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
     "typescript": "^2.8.3",
-    "zone.js": "^0.8.26"
+    "zone.js": "^0.8.26",
+    "graphql-path": "^2.0.0",
+    "monoquery": "^1.0.0"
   },
   "peerDependencies": {
-    "rxjs": "^6.0.0"
+    "rxjs": "^6.0.0",
+    "graphql-path": "^2.0.0",
+    "monoquery": "^1.0.0"
   },
   "jest": {
     "preset": "jest-preset-angular",
@@ -44,9 +44,5 @@
       "<rootDir>/src/"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
-  },
-  "dependencies": {
-    "graphql-path": "^2.0.0",
-    "monoquery": "^1.0.0"
   }
 }
