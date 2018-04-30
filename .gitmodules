@@ -7,3 +7,6 @@
 [submodule "packages/angular-monoquery"]
 	path = packages/angular-monoquery
 	url = git@github.com:brysgo/angular-monoquery.git
+[submodule "packages/react-monoquery"]
+	path = packages/react-monoquery
+	url = git@github.com:brysgo/react-monoquery.git
