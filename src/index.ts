@@ -11,8 +11,7 @@ export const Fragments = ({
   Object.defineProperty(DecoratedComponent.prototype, "data", {
     get: function data() {
       return this[providerName]
-        .getDataFor(DecoratedComponent)
-        .pipe(map(x => JSON.stringify(x)));
+        .getDataFor(DecoratedComponent);
     }
   });
   return DecoratedComponent;
