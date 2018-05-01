@@ -12,7 +12,8 @@
   },
   "scripts": {
     "build": "ng-packagr -p package.json",
-    "test": "jest"
+    "test": "jest",
+    "prepublishOnly": "yarn build"
   },
   "devDependencies": {
     "@angular/common": "^5.2.10",
