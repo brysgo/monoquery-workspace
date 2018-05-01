@@ -5,7 +5,8 @@
       "packages/*"
     ],
     "nohoist": [
-      "**/jest-preset-angular"
+      "**/jest-preset-angular",
+      "**/monoquery"
     ]
   },
   "resolutions": {
