@@ -1,5 +1,6 @@
 import { Observable } from "rxjs/Observable";
-import { fromPromise } from "rxjs/observable/fromPromise";
+import "rxjs/add/observable/of";
+
 import { map, mergeAll } from "rxjs/operators";
 import { createMonoQuery } from "monoquery";
 
@@ -10,8 +11,7 @@ export const Fragments = ({
   DecoratedComponent.fragments = fragments;
   Object.defineProperty(DecoratedComponent.prototype, "data", {
     get: function data() {
-      return this[providerName]
-        .getDataFor(DecoratedComponent);
+      return this[providerName].getDataFor(DecoratedComponent);
     }
   });
   return DecoratedComponent;
@@ -19,7 +19,19 @@ export const Fragments = ({
 
 export const MonoQuery = ({ fetcher, query, ...options }) => result => {
   result.prototype.fetchData = function fetchData() {
-    this.monoQuery = this.monoQuery || createMonoQuery(fetcher);
+    this.monoQuery =
+      this.monoQuery ||
+      createMonoQuery((...args) => {
+        let result = fetcher;
+        if (typeof fetcher === "function") {
+          result = fetcher(...args);
+        }
+        if (result instanceof Observable) {
+          return result.toPromise();
+        } else {
+          return Promise.resolve(result);
+        }
+      });
     return (this.data = new Observable(observer => {
       observer.next(this.monoQuery({ ...options, query: query() }));
       observer.complete();

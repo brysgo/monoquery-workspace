@@ -1,26 +1,32 @@
-import { Component } from "@angular/core";
-import { Observable } from "rxjs/Observable";
+import { Component, Inject, forwardRef } from "@angular/core";
+import { map } from "rxjs/operators";
 import { Fragments } from "../";
 
 import gql from "graphql-tag";
 
-import { MonoProvider } from "./MonoProvider";
-
-@Fragments({
-  fragments: {
-    simpleFragment: gql`
-      fragment SimpleFragment on Query {
-        hello
-      }
-    `
+export const createExampleComponent = MonoProvider => {
+  @Fragments({
+    fragments: {
+      simpleFragment: gql`
+        fragment SimpleFragment on Query {
+          hello
+        }
+      `
+    }
+  })
+  @Component({
+    selector: "example-component",
+    template: "{{jsonData | async}}"
+  })
+  class ExampleComponent {
+    jsonData: string;
+    constructor(
+      @Inject(forwardRef(() => MonoProvider))
+      monoProvider: MonoProvider
+    ) {
+      this.monoProvider = monoProvider;
+      this.jsonData = this.data.pipe(map(d => JSON.stringify(d)));
+    }
   }
-})
-@Component({
-  selector: "example-component",
-  template: "{{data | async}}"
-})
-export class ExampleComponent {
-  constructor(monoProvider: MonoProvider) {
-    this.monoProvider = monoProvider;
-  }
-}
+  return ExampleComponent;
+};
