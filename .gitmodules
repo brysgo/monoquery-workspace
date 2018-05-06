@@ -10,3 +10,6 @@
 [submodule "packages/react-monoquery"]
 	path = packages/react-monoquery
 	url = git@github.com:brysgo/react-monoquery.git
+[submodule "packages/react-listpath"]
+	path = packages/react-listpath
+	url = git@github.com:brysgo/react-listpath.git
