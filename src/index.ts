@@ -11,7 +11,11 @@ export const Fragments = ({
   DecoratedComponent.fragments = fragments;
   Object.defineProperty(DecoratedComponent.prototype, "data", {
     get: function data() {
-      return this[providerName].getDataFor(DecoratedComponent);
+      Object.defineProperty(this, "data", {
+        value: this[providerName].getDataFor(DecoratedComponent),
+        writable: false
+      });
+      return this.data;
     }
   });
   return DecoratedComponent;
