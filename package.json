@@ -1,5 +1,8 @@
 {
   "private": true,
+  "scripts": {
+    "test": "jest"
+  },
   "workspaces": {
     "packages": [
       "packages/*"
@@ -12,5 +15,10 @@
   "resolutions": {
     "**/phantomjs-prebuilt": "npm:noop",
     "**/node-sass": "npm:noop"
+  },
+  "jest": {
+    "projects": [
+      "<rootDir>/packages/*"
+    ]
   }
 }
