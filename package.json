@@ -20,5 +20,8 @@
     "projects": [
       "<rootDir>/packages/*"
     ]
+  },
+  "devDependencies": {
+    "lerna": "^2.11.0"
   }
 }
