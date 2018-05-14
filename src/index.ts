@@ -28,7 +28,7 @@ export const MonoQuery = ({
   ...options
 }) => result => {
   result.prototype.fetchData = function fetchData() {
-    const query = queryFn();
+    const query = queryFn().parsedQuery;
     let result = fetcher;
     if (typeof fetcher === "function") {
       result = fetcher({ ...options, query });
