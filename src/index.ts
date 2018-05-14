@@ -1,7 +1,8 @@
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/observable/of";
+import "rxjs/add/observable/fromPromise";
 
-import { map, mergeAll } from "rxjs/operators";
+import { map } from "rxjs/operators";
 import { createMonoQuery } from "monoquery";
 
 export const Fragments = ({
@@ -21,29 +22,30 @@ export const Fragments = ({
   return DecoratedComponent;
 };
 
-export const MonoQuery = ({ fetcher, query, ...options }) => result => {
+export const MonoQuery = ({
+  fetcher,
+  query: queryFn,
+  ...options
+}) => result => {
   result.prototype.fetchData = function fetchData() {
-    this.monoQuery =
-      this.monoQuery ||
-      createMonoQuery((...args) => {
-        let result = fetcher;
-        if (typeof fetcher === "function") {
-          result = fetcher(...args);
-        }
-        if (result instanceof Observable) {
-          return result.toPromise();
-        } else {
-          return Promise.resolve(result);
-        }
-      });
-    return (this.data = new Observable(observer => {
-      observer.next(this.monoQuery({ ...options, query: query() }));
-      observer.complete();
-    }));
+    const query = queryFn();
+    let result = fetcher;
+    if (typeof fetcher === "function") {
+      result = fetcher({ ...options, query });
+    }
+    if (result instanceof Observable) {
+      this.monoQuery = result.pipe(map(d => createMonoQuery(d)({ query })));
+    } else if (result instanceof Promise) {
+      this.monoQuery = Observable.fromPromise(
+        result.then(d => createMonoQuery(d)({ query }))
+      );
+    } else {
+      this.monoQuery = Observable.of(createMonoQuery(result)({ query }));
+    }
+    return this.monoQuery;
   };
   result.prototype.getDataFor = function getDataFor(comp) {
-    return this.data.pipe(
-      mergeAll(),
+    return this.monoQuery.pipe(
       map((d: any) => d.getResultsFor(comp.fragments))
     );
   };
