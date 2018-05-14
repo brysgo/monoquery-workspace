@@ -28,10 +28,10 @@ export const MonoQuery = ({
   ...options
 }) => result => {
   result.prototype.fetchData = function fetchData() {
-    const query = queryFn().parsedQuery;
+    const query = queryFn();
     let result = fetcher;
     if (typeof fetcher === "function") {
-      result = fetcher({ ...options, query });
+      result = fetcher({ ...options, query: query.parsedQuery });
     }
     if (result instanceof Observable) {
       this.monoQuery = result.pipe(map(d => createMonoQuery(d)({ query })));
