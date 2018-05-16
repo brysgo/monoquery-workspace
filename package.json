@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "angular-monoquery",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "dist/bundles/angular-monoquery.umd.js",
   "author": "Bryan Goldstein <brysgo@gmail.com>",
   "license": "MIT",
