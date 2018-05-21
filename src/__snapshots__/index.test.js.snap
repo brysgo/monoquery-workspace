@@ -1,0 +1,67 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`when react-listpath is not installed can build, run distribute simple query 1`] = `
+<div>
+  <div>
+    <div>
+      {
+  "__typename": "User",
+  "name": "John Doe",
+  "email": "user@example.com",
+  "phone": "5555555555"
+}
+    </div>
+    <div>
+      {
+  "email": "user@example.com"
+}
+    </div>
+  </div>
+</div>
+`;
+
+exports[`with react-listpath supports nesting fragments in lists 1`] = `
+<div>
+  <div>
+    {
+  "__typename": "User",
+  "name": "John Doe",
+  "email": "user@example.com",
+  "phone": "5555555555",
+  "orders": [
+    {
+      "items": [
+        {
+          "__typename": "Item",
+          "name": "only one thing"
+        }
+      ]
+    },
+    {
+      "items": [
+        {
+          "__typename": "Item",
+          "name": "Super cool stuff"
+        },
+        {
+          "__typename": "Item",
+          "name": "really cool nested thing"
+        }
+      ]
+    }
+  ]
+}
+    <div>
+      <div>
+        only one thing
+      </div>
+      <div>
+        Super cool stuff
+      </div>
+      <div>
+        really cool nested thing
+      </div>
+    </div>
+  </div>
+</div>
+`;
