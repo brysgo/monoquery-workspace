@@ -1,0 +1,35 @@
+{
+  "name": "react-listpath",
+  "version": "1.0.0",
+  "description": "Track list item references through context",
+  "repository": "git@github.com:brysgo/react-listpath.git",
+  "author": "Bryan Goldstein <brysgo@gmail.com>",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "es",
+    "lib",
+    "umd"
+  ],
+  "scripts": {
+    "build": "nwb build-react-component",
+    "clean": "nwb clean-module",
+    "test": "jest --config jest.config.js --no-cache",
+    "prepublishOnly": "yarn build"
+  },
+  "devDependencies": {
+    "babel-jest": "^22.4.3",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "jest": "^22.4.3",
+    "nwb": "0.21.x",
+    "react": "^16.3.2",
+    "react-dom": "^16.3.2",
+    "react-test-renderer": "^16.3.2"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.3.2"
+  }
+}
