@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MonoQueryModule is used to build a MonoProvider 1`] = `
+<example-component
+  jsonData={[Function Observable]}
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"world"}}
+</example-component>
+`;
+
+exports[`MonoQueryModule works when the fetcher returns a promise 1`] = `
+<example-component
+  jsonData={[Function Observable]}
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"world"}}
+</example-component>
+`;
+
+exports[`MonoQueryModule works when the fetcher returns an observer 1`] = `
+<example-component
+  jsonData={[Function Observable]}
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"world"}}
+</example-component>
+`;
+
+exports[`MonoQueryModule works when the fetcher returns an observer 2`] = `
+<example-component
+  jsonData={[Function Observable]}
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"again"}}
+</example-component>
+`;
