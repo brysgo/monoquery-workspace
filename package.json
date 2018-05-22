@@ -36,9 +36,9 @@
     "zone.js": "^0.8.26"
   },
   "peerDependencies": {
-    "graphql-path": "^2.0.0",
-    "monoquery": "^1.0.0",
-    "rxjs": "^6.0.0"
+    "graphql-path": "*",
+    "monoquery": "*",
+    "rxjs": "*"
   },
   "jest": {
     "preset": "jest-preset-angular",
