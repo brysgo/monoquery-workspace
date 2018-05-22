@@ -1,6 +1,6 @@
 {
   "name": "react-listpath",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Track list item references through context",
   "repository": "git@github.com:brysgo/react-listpath.git",
   "author": "Bryan Goldstein <brysgo@gmail.com>",
