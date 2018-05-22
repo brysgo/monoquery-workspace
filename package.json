@@ -1,21 +1,19 @@
 {
   "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "publish": "lerna publish"
   },
   "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
+    "packages": ["packages/*"],
+    "nohoist": ["**/jest-preset-angular", "**/monoquery"]
   },
   "resolutions": {
     "**/phantomjs-prebuilt": "npm:noop",
     "**/node-sass": "npm:noop"
   },
   "jest": {
-    "projects": [
-      "<rootDir>/packages/*"
-    ]
+    "projects": ["<rootDir>/packages/*"]
   },
   "devDependencies": {
     "lerna": "^2.11.0"

@@ -4175,13 +4175,6 @@ graphql-anywhere@^4.1.10, graphql-anywhere@^4.1.8:
   dependencies:
     apollo-utilities "^1.0.12"
 
-graphql-path@^2.0.0:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/graphql-path/-/graphql-path-2.0.5.tgz#d1463c5fa073b604efcac4fa1618d9150b3863b7"
-  dependencies:
-    graphql "^0.13.1"
-    graphql-tag "^2.8.0"
-
 graphql-tag@^2.8.0:
   version "2.9.2"
   resolved "https://registry.yarnpkg.com/graphql-tag/-/graphql-tag-2.9.2.tgz#2f60a5a981375f430bf1e6e95992427dc18af686"

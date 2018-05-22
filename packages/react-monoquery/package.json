@@ -43,11 +43,5 @@
     "react": "*",
     "react-apollo": "*",
     "react-listpath": "*"
-  },
-  "workspaces": {
-    "nohoist": [
-      "**/jest-preset-angular",
-      "**/monoquery"
-    ]
   }
 }
