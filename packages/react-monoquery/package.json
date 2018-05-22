@@ -39,10 +39,10 @@
     "monoquery": "^1.2.3"
   },
   "peerDependencies": {
-    "graphql-path": "^2.0.0",
-    "react": "^16.3.2",
-    "react-apollo": "^2.1.3",
-    "react-listpath": "^1.0.0"
+    "graphql-path": "*",
+    "react": "*",
+    "react-apollo": "*",
+    "react-listpath": "*"
   },
   "workspaces": {
     "nohoist": [
