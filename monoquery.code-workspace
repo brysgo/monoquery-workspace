@@ -1,0 +1,20 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "packages/react-monoquery"
+		},
+		{
+			"path": "packages/angular-monoquery"
+		},
+		{
+			"path": "packages/graphql-path"
+		},
+		{
+			"path": "packages/monoquery"
+		}
+	],
+	"settings": {}
+}
