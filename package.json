@@ -6,10 +6,6 @@
   "workspaces": {
     "packages": [
       "packages/*"
-    ],
-    "nohoist": [
-      "**/jest-preset-angular",
-      "**/monoquery"
     ]
   },
   "resolutions": {

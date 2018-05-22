@@ -46,5 +46,11 @@
       "<rootDir>/src/"
     ],
     "setupTestFrameworkScriptFile": "<rootDir>/src/setup-jest.ts"
+  },
+  "workspaces": {
+    "nohoist": [
+      "**/jest-preset-angular",
+      "**/monoquery"
+    ]
   }
 }
