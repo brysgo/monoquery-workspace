@@ -9,6 +9,15 @@ exports[`MonoQueryModule is used to build a MonoProvider 1`] = `
 </example-component>
 `;
 
+exports[`MonoQueryModule passes through list path resolvers with reference to fragment container 1`] = `
+<example-component
+  jsonData={[Function Observable]}
+  monoProvider={[Function MonoProvider]}
+>
+  {"simpleFragment":{"hello":"world"},"fragmentInList":{"keyProp":"b","message":"testing, testing, 1, 2, 3..."}}
+</example-component>
+`;
+
 exports[`MonoQueryModule works when the fetcher returns a promise 1`] = `
 <example-component
   jsonData={[Function Observable]}

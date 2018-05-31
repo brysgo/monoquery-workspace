@@ -12,7 +12,7 @@ export const Fragments = ({
   Object.defineProperty(DecoratedComponent.prototype, "data", {
     get: function data() {
       Object.defineProperty(this, "data", {
-        value: this[providerName].getDataFor(DecoratedComponent),
+        value: this[providerName].getDataFor(DecoratedComponent, this),
         writable: false
       });
       return this.data;
@@ -23,6 +23,7 @@ export const Fragments = ({
 
 export const MonoQuery = ({
   fetcher,
+  listPathResolvers = {},
   query: queryFn,
   ...options
 }) => result => {
@@ -53,9 +54,17 @@ export const MonoQuery = ({
     firstFetch = true;
     return observable;
   };
-  result.prototype.getDataFor = function getDataFor(comp) {
+  result.prototype.getDataFor = function getDataFor(comp, compInstance) {
+    const injectedListPathResolvers = {};
+    Object.keys(listPathResolvers).forEach(
+      listPathTypeKey =>
+        (injectedListPathResolvers[listPathTypeKey] = (...args) =>
+          listPathResolvers[listPathTypeKey](...args, compInstance))
+    );
     return observable.pipe(
-      map((d: any) => d.getResultsFor(comp.fragments))
+      map((d: any) =>
+        d.getResultsFor(comp.fragments, injectedListPathResolvers)
+      )
     );
   };
   return result;
