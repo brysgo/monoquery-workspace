@@ -10,7 +10,7 @@
   },
   "resolutions": {
     "**/phantomjs-prebuilt": "npm:noop",
-    "**/node-sass": "npm:noop"
+    "**/node-sass": "npm:sass"
   },
   "jest": {
     "projects": ["<rootDir>/packages/*"]

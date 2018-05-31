@@ -6591,9 +6591,9 @@ node-sass-tilde-importer@^1.0.0:
   dependencies:
     find-parent-dir "^0.3.0"
 
-node-sass@^4.5.3, "node-sass@npm:noop", phantomjs-prebuilt@2.1.16, phantomjs-prebuilt@^2.1.7, "phantomjs-prebuilt@npm:noop":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/noop/-/noop-0.2.2.tgz#868b86cd3a26af8c7d4788d3fe923d586870909b"
+node-sass@^4.5.3, "node-sass@npm:sass":
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/sass/-/sass-1.4.0.tgz#37b2eb8ef6172db570392564d2bef1db936a2dfd"
 
 node-uuid@~1.4.7:
   version "1.4.8"
@@ -7232,6 +7232,10 @@ performance-now@^0.2.0:
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
+
+phantomjs-prebuilt@2.1.16, phantomjs-prebuilt@^2.1.7, "phantomjs-prebuilt@npm:noop":
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/noop/-/noop-0.2.2.tgz#868b86cd3a26af8c7d4788d3fe923d586870909b"
 
 pify@^2.0.0, pify@^2.3.0:
   version "2.3.0"
