@@ -16,7 +16,7 @@ export const createMonoQuery = fetcherOrData => graphqlQueryParams => {
   const { query: inputQuery, ...rest } = graphqlQueryParams;
   const { fragmentPaths, fragmentNames, parsedQuery } = inputQuery;
   const resultsFromData = data => ({
-    getResultsFor: (fragments, arrayPath = []) =>
+    getResultsFor: (fragments, arrayPathOrResolvers = []) =>
       Object.keys(fragments).reduce(
         (acc, key) => (
           (acc[key] = filter(
@@ -25,7 +25,19 @@ export const createMonoQuery = fetcherOrData => graphqlQueryParams => {
               data,
               fragmentPaths[fragmentNames.get(fragments[key])],
               {},
-              arrayPath
+              typeof arrayPathOrResolvers === "string" ||
+              Array.isArray(arrayPathOrResolvers)
+                ? arrayPathOrResolvers
+                : currentArray =>
+                    currentArray.indexOf(
+                      currentArray.find(item =>
+                        tryGet(arrayPathOrResolvers, item.__typename, () => {
+                          throw new Error(
+                            "Missing list path resolver for: " + item.__typename
+                          );
+                        })(item)
+                      )
+                    )
             )
           )),
           acc

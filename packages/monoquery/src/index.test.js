@@ -205,4 +205,50 @@ describe("when fragments are nested under lists", () => {
       "Array path provided was not long enough"
     );
   });
+  it("accepts list path resolvers (by type) instead of a list path", () => {
+    const fragments = {
+      fragmentInLists: gql`
+        fragment FragmentInLists on Query {
+          something
+        }
+      `
+    };
+    const createListItem = name => ({
+      __typename: "SomeListItem",
+      name,
+      anotherList: [
+        { __typename: "AnotherListItem", something: name + "1" },
+        { __typename: "AnotherListItem", something: name + "2" }
+      ]
+    });
+    const monoQuery = createMonoQuery({
+      data: {
+        __typename: "SomeList",
+        someList: [createListItem("A"), createListItem("B")]
+      }
+    });
+    const result = monoQuery({
+      query: gql`
+        {
+          someList {
+            name
+            anotherList {
+              ...FragmentInLists
+            }
+          }
+        }
+        ${fragments.fragmentInLists}
+      `
+    });
+    expect(
+      result.getResultsFor(fragments, {
+        SomeListItem: arg => arg.name === "B",
+        AnotherListItem: arg => arg.something === "B1"
+      })
+    ).toEqual({
+      fragmentInLists: {
+        something: "B1"
+      }
+    });
+  });
 });
