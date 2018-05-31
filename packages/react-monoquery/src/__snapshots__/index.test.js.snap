@@ -7,7 +7,6 @@ exports[`when react-listpath is not installed can build, run distribute simple q
       {
   "__typename": "User",
   "name": "John Doe",
-  "email": "user@example.com",
   "phone": "5555555555"
 }
     </div>
@@ -31,22 +30,13 @@ exports[`with react-listpath supports nesting fragments in lists 1`] = `
   "orders": [
     {
       "items": [
-        {
-          "__typename": "Item",
-          "name": "only one thing"
-        }
+        {}
       ]
     },
     {
       "items": [
-        {
-          "__typename": "Item",
-          "name": "Super cool stuff"
-        },
-        {
-          "__typename": "Item",
-          "name": "really cool nested thing"
-        }
+        {},
+        {}
       ]
     }
   ]
