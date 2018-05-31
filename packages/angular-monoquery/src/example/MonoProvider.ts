@@ -1,7 +1,8 @@
 import { Injectable } from "@angular/core";
 
 import { createExampleComponent } from "./ExampleComponent";
-const ExampleComponent = createExampleComponent();
+
+const ExampleComponent = createExampleComponent({});
 
 import { MonoQuery, gql } from "../";
 
@@ -12,7 +13,8 @@ class MonoProvider {
     this.fetchData();
   }
 }
-export const createMonoProvider = options => {
+export const createMonoProvider = (options) => {
+
   return MonoQuery({
     query: () => gql`
       query MainQuery {
