@@ -2,6 +2,7 @@
   "private": true,
   "scripts": {
     "test": "jest",
+    "pushAll": "bash ./scripts/pushAll.sh",
     "publish": "lerna publish"
   },
   "workspaces": {
