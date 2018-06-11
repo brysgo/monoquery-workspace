@@ -30,12 +30,12 @@ export const createMonoQuery = fetcherOrData => graphqlQueryParams => {
                 ? arrayPathOrResolvers
                 : currentArray =>
                     currentArray.indexOf(
-                      currentArray.find(item =>
+                      currentArray.find((item, i) =>
                         tryGet(arrayPathOrResolvers, item.__typename, () => {
                           throw new Error(
                             "Missing list path resolver for: " + item.__typename
                           );
-                        })(item)
+                        })(item, i)
                       )
                     )
             )
