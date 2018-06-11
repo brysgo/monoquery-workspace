@@ -55,16 +55,23 @@ export const MonoQuery = ({
     return observable;
   };
   result.prototype.getDataFor = function getDataFor(comp, compInstance) {
-    const injectedListPathResolvers = {};
-    Object.keys(listPathResolvers).forEach(
-      listPathTypeKey =>
-        (injectedListPathResolvers[listPathTypeKey] = (...args) =>
-          listPathResolvers[listPathTypeKey](...args, compInstance))
-    );
+    let injectedListPath;
+    if (compInstance.getListPath) {
+      injectedListPath = compInstance.getListPath();
+    } else {
+      injectedListPath = {};
+      Object.keys(listPathResolvers).forEach(
+        listPathTypeKey =>
+          (injectedListPath[listPathTypeKey] = (item, ...indexAndArray) =>
+            listPathResolvers[listPathTypeKey](
+              item,
+              compInstance,
+              ...indexAndArray
+            ))
+      );
+    }
     return observable.pipe(
-      map((d: any) =>
-        d.getResultsFor(comp.fragments, injectedListPathResolvers)
-      )
+      map((d: any) => d.getResultsFor(comp.fragments, injectedListPath))
     );
   };
   return result;
