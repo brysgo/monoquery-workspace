@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/ng-packagr/package.schema.json",
   "name": "angular-monoquery",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "main": "dist/bundles/angular-monoquery.umd.js",
   "author": "Bryan Goldstein <brysgo@gmail.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     "graphql-path": "^2.0.6",
     "jest": "^22.4.3",
     "jest-preset-angular": "^5.2.2",
-    "monoquery": "^1.3.0",
+    "monoquery": "^1.3.1",
     "ng-packagr": "^2.4.2",
     "rxjs": "^6.0.0",
     "rxjs-compat": "^6.0.0",
