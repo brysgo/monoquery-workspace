@@ -1,1 +1,3 @@
 # Coming soon...
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/brysgo/monoquery-workspace.svg)](https://greenkeeper.io/)
