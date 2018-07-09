@@ -1,0 +1,14 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "package.json",
+        "packages/angular-monoquery/package.json",
+        "packages/graphql-path/package.json",
+        "packages/monoquery/package.json",
+        "packages/react-listpath/package.json",
+        "packages/react-monoquery/package.json"
+      ]
+    }
+  }
+}
