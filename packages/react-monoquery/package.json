@@ -17,7 +17,7 @@
     "prepublishOnly": "yarn build"
   },
   "devDependencies": {
-    "apollo-cache-inmemory": "^1.1.12",
+    "apollo-cache-inmemory": "^1.2.6",
     "apollo-client": "^2.2.8",
     "apollo-link-schema": "^1.1.0",
     "babel-jest": "^23.2.0",
