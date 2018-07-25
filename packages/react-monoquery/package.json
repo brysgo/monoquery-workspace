@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "apollo-cache-inmemory": "^1.1.12",
-    "apollo-client": "^2.2.8",
+    "apollo-client": "^2.3.7",
     "apollo-link-schema": "^1.1.0",
     "babel-jest": "^23.2.0",
     "babel-plugin-transform-runtime": "^6.23.0",
