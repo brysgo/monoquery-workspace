@@ -40,7 +40,7 @@
   },
   "peerDependencies": {
     "graphql-path": "*",
-    "react": "*",
+    "react": ">=16.4.2",
     "react-apollo": "*",
     "react-listpath": "*"
   }
