@@ -25,7 +25,7 @@
     "jest": "^23.2.0",
     "nwb": "0.21.x",
     "react": "^16.4.2",
-    "react-dom": "^16.3.2",
+    "react-dom": "^16.4.2",
     "react-test-renderer": "^16.3.2"
   },
   "license": "MIT",
